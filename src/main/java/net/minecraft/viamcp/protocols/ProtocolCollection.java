@@ -4,6 +4,10 @@ package net.minecraft.viamcp.protocols;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 
 public enum ProtocolCollection {
+    /* 1.21.x */
+    R1_21_2(ProtocolVersion.v1_21_2, ProtocolInfoCollection.R1_21_2),
+    R1_21(ProtocolVersion.v1_21, ProtocolInfoCollection.R1_21),
+    
     /* 1.20.x */
     R1_20_3(ProtocolVersion.v1_20_3, ProtocolInfoCollection.R1_20_3),
     R1_20_2(ProtocolVersion.v1_20_2, ProtocolInfoCollection.R1_20_2),

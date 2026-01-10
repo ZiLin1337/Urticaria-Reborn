@@ -2,6 +2,12 @@ package net.minecraft.viamcp.protocols;
 
 public class ProtocolInfoCollection {
     private static final String NO_DESC = "No Description Available";
+    public static ProtocolInfo R1_21_2 = new ProtocolInfo(
+            "Tricky Trials", NO_DESC, "October 22, 2024"
+    );
+    public static ProtocolInfo R1_21 = new ProtocolInfo(
+            "Tricky Trials", NO_DESC, "June 13, 2024"
+    );
     public static ProtocolInfo R1_20_3 = new ProtocolInfo(
             "The Wild Update", NO_DESC, "October 1, 2023"
     );
