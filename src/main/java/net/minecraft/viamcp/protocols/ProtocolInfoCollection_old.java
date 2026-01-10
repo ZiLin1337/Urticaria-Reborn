@@ -3,7 +3,6 @@ package net.minecraft.viamcp.protocols;
 public class ProtocolInfoCollection {
     private static final String NO_DESC = "No Description Available";
     
-    // 1.21.x - Supported by ViaVersion 5.7.0
     public static ProtocolInfo R1_21_4 = new ProtocolInfo(
             "Tricky Trials", NO_DESC, "December 3, 2024"
     );
@@ -13,8 +12,6 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_21 = new ProtocolInfo(
             "Tricky Trials", NO_DESC, "June 13, 2024"
     );
-    
-    // 1.20.x - Supported by ViaVersion 5.7.0
     public static ProtocolInfo R1_20_5 = new ProtocolInfo(
             "The Wild Update", NO_DESC, "November 30, 2023"
     );
@@ -27,8 +24,6 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_20 = new ProtocolInfo(
             "The Wild Update", NO_DESC, "June 12, 2023"
     );
-    
-    // 1.19.x
     public static ProtocolInfo R1_19_4 = new ProtocolInfo(
             "The Wild Update", NO_DESC, "March 14, 2023"
     );
@@ -41,24 +36,18 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_19 = new ProtocolInfo(
             "The Wild Update", NO_DESC, "June 7, 2022"
     );
-    
-    // 1.18.x
     public static ProtocolInfo R1_18_2 = new ProtocolInfo(
             "Caves & Cliffs: Part II", NO_DESC, "February 28, 2022"
     );
     public static ProtocolInfo R1_18 = new ProtocolInfo(
             "Caves & Cliffs: Part II", NO_DESC, "November 30, 2021 - December 10, 2021"
     );
-    
-    // 1.17.x
     public static ProtocolInfo R1_17_1 = new ProtocolInfo(
             "Caves & Cliffs: Part I", NO_DESC, "July 6, 2021"
     );
     public static ProtocolInfo R1_17 = new ProtocolInfo(
             "Caves & Cliffs: Part I", NO_DESC, "June 8, 2021"
     );
-    
-    // 1.16.x
     public static ProtocolInfo R1_16_4 = new ProtocolInfo(
             "Nether Update", NO_DESC, "November 2, 2020 - January 13, 2021"
     );
@@ -74,8 +63,6 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_16 = new ProtocolInfo(
             "Nether Update", NO_DESC, "June 23, 2020"
     );
-    
-    // 1.15.x
     public static ProtocolInfo R1_15_2 = new ProtocolInfo(
             "Buzzy Bees", NO_DESC, "January 21, 2020"
     );
@@ -85,8 +72,6 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_15 = new ProtocolInfo(
             "Buzzy Bees", NO_DESC, "December 10, 2019"
     );
-    
-    // 1.14.x
     public static ProtocolInfo R1_14_4 = new ProtocolInfo(
             "Village & Pillage", NO_DESC, "July 19, 2019"
     );
@@ -102,8 +87,6 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_14 = new ProtocolInfo(
             "Village & Pillage", NO_DESC, "April 23, 2019"
     );
-    
-    // 1.13.x
     public static ProtocolInfo R1_13_2 = new ProtocolInfo(
             "Update Aquatic", NO_DESC, "October 22, 2018"
     );
@@ -113,8 +96,6 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_13 = new ProtocolInfo(
             "Update Aquatic", NO_DESC, "July 18, 2018"
     );
-    
-    // 1.12.x
     public static ProtocolInfo R1_12_2 = new ProtocolInfo(
             "World of Color Update", NO_DESC, "September 18, 2017"
     );
@@ -124,21 +105,15 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_12 = new ProtocolInfo(
             "World of Color Update", NO_DESC, "June 7, 2017"
     );
-    
-    // 1.11.x
     public static ProtocolInfo R1_11_1 = new ProtocolInfo(
             "Exploration Update", NO_DESC, "December 20, 2016 - December 21, 2016"
     );
     public static ProtocolInfo R1_11 = new ProtocolInfo(
             "Exploration Update", NO_DESC, "November 14, 2016"
     );
-    
-    // 1.10.x
     public static ProtocolInfo R1_10 = new ProtocolInfo(
             "Frostburn Update", NO_DESC, "June 8, 2016 - June 23, 2016"
     );
-    
-    // 1.9.x
     public static ProtocolInfo R1_9_3 = new ProtocolInfo(
             "Combat Update", NO_DESC, "May 10, 2016"
     );
@@ -151,13 +126,9 @@ public class ProtocolInfoCollection {
     public static ProtocolInfo R1_9 = new ProtocolInfo(
             "Combat Update", NO_DESC, "February 29, 2016"
     );
-    
-    // 1.8.x
     public static ProtocolInfo R1_8 = new ProtocolInfo(
             "Bountiful Update", NO_DESC, "September 2, 2014 - December 9, 2015"
     );
-    
-    // 1.7.x
     public static ProtocolInfo R1_7_6 = new ProtocolInfo(
             "The Update that Changed the World", NO_DESC, "April 9, 2014 - June 26, 2014"
     );
