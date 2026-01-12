@@ -13,8 +13,8 @@ import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.connection.UserConnection;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.type.Type;
-import com.viaversion.viaversion.protocols.protocol1_19to1_18_2.ServerboundPackets1_19;
-import com.viaversion.viabackwards.protocol.protocol1_18_2to1_19.Protocol1_18_2To1_19;
+import com.viaversion.viaversion.protocols.v1_18_2to1_19.ServerboundPackets1_19;
+import com.viaversion.viabackwards.protocol.v1_19to1_18_2.Protocol1_19To1_18_2;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.C02PacketUseEntity;
 import net.minecraft.network.play.client.C0FPacketConfirmTransaction;
@@ -77,7 +77,7 @@ public class HeypixelFlight extends Mode<Flight> {
                     wrapper.write(Type.VAR_INT, 0);
 
                     // 使用你截图中的协议类发送
-                    wrapper.sendToServer(Protocol1_18_2To1_19.class);
+                    wrapper.sendToServer(Protocol1_19To1_18_2.class);
                 } catch (Exception e) {
                     // 如果协议类不匹配，打印错误但不崩端
                     e.printStackTrace();

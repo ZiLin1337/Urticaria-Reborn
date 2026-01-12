@@ -18,7 +18,7 @@
 package net.minecraft.viamcp.network;
 
 import cn.hackedmc.urticaria.util.interfaces.InstanceAccess;
-import com.viaversion.viabackwards.protocol.protocol1_16_4to1_17.Protocol1_16_4To1_17;
+import com.viaversion.viabackwards.protocol.v1_17to1_16_4.Protocol1_17To1_16_4;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.connection.UserConnection;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
@@ -27,8 +27,8 @@ import com.viaversion.viaversion.api.type.Type;
 import com.viaversion.viaversion.exception.CancelCodecException;
 import com.viaversion.viaversion.exception.CancelDecoderException;
 import com.viaversion.viaversion.exception.InformativeException;
-import com.viaversion.viaversion.protocols.protocol1_17_1to1_17.ClientboundPackets1_17_1;
-import com.viaversion.viaversion.protocols.protocol1_17to1_16_4.ServerboundPackets1_17;
+import com.viaversion.viaversion.protocols.v1_17to1_17_1.ClientboundPackets1_17_1;
+import com.viaversion.viaversion.protocols.v1_16_4to1_17.ServerboundPackets1_17;
 import com.viaversion.viaversion.util.PipelineUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
@@ -71,7 +71,7 @@ public class VLBViaDecodeHandler extends MessageToMessageDecoder<ByteBuf> {
                         PacketWrapper wrapper = PacketWrapper.create(ServerboundPackets1_17.PONG, user);
                         wrapper.write(Type.INT, id);
                         try {
-                            wrapper.sendToServer(Protocol1_16_4To1_17.class);
+                            wrapper.sendToServer(Protocol1_17To1_16_4.class);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

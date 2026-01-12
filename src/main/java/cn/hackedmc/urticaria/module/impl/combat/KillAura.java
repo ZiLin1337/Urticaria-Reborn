@@ -38,7 +38,7 @@ import cn.hackedmc.urticaria.util.rotation.RotationUtil;
 import cn.hackedmc.urticaria.util.vector.Vector2d;
 import cn.hackedmc.urticaria.util.vector.Vector2f;
 import cn.hackedmc.urticaria.value.impl.*;
-import com.viaversion.viarewind.protocol.protocol1_8to1_9.Protocol1_8To1_9;
+import com.viaversion.viarewind.protocol.v1_9to1_8.Protocol1_9To1_8;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.type.Type;

@@ -21,13 +21,13 @@ import cn.hackedmc.urticaria.value.Mode;
 import cn.hackedmc.urticaria.value.impl.BooleanValue;
 import cn.hackedmc.urticaria.value.impl.ModeValue;
 import cn.hackedmc.urticaria.value.impl.SubMode;
-import com.viaversion.viarewind.protocol.protocol1_8to1_9.Protocol1_8To1_9;
+import com.viaversion.viarewind.protocol.v1_9to1_8.Protocol1_9To1_8;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.type.Type;
 import com.viaversion.viaversion.api.type.types.ByteType;
-import com.viaversion.viaversion.protocols.protocol1_12to1_11_1.ServerboundPackets1_12;
-import com.viaversion.viaversion.protocols.protocol1_9to1_8.ServerboundPackets1_9;
+import com.viaversion.viaversion.protocols.v1_11_1to1_12.ServerboundPackets1_12;
+import com.viaversion.viaversion.protocols.v1_8to1_9.ServerboundPackets1_9;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.item.*;
@@ -126,11 +126,11 @@ public class GrimACNoSlow extends Mode<NoSlow> {
             }
 
             if (mode.getValue().getName().equalsIgnoreCase("swap hand")) {
-                PacketWrapper digging = PacketWrapper.create(19, null, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                PacketWrapper digging = PacketWrapper.create(19, Via.getManager().getConnectionManager().getConnections().iterator().next());
                 digging.write(Type.VAR_INT, 6);
                 digging.write(Type.LONG, BlockPos.ORIGIN.toLong());
                 digging.write(Type.BYTE, (byte) 0);
-                PacketUtil.sendToServer(digging, Protocol1_8To1_9.class, true, true);
+                PacketUtil.sendToServer(digging, Protocol1_9To1_8.class, true, true);
             }
 
             if (mode.getValue().getName().equalsIgnoreCase("hyt bedwars with aac") && mc.thePlayer.getHeldItem() != null && (mc.thePlayer.getHeldItem().getItem() instanceof ItemFood || (mc.thePlayer.getHeldItem().getItem() instanceof ItemPotion && !ItemPotion.isSplash(mc.thePlayer.getHeldItem().getMetadata()))) && mc.thePlayer.isUsingItem()) {
@@ -168,18 +168,18 @@ public class GrimACNoSlow extends Mode<NoSlow> {
         if (mc.thePlayer.getHeldItem() != null && mc.thePlayer.getHeldItem().getItem() instanceof ItemSword && mc.thePlayer.isUsingItem()) {
             mc.getNetHandler().addToSendQueueUnregistered(new C08PacketPlayerBlockPlacement(mc.thePlayer.getHeldItem()));
             if (ViaMCP.getInstance().getVersion() > 47) {
-                PacketWrapper useItem = PacketWrapper.create(29, null, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
                 useItem.write(Type.VAR_INT, 1);
-                PacketUtil.sendToServer(useItem, Protocol1_8To1_9.class, true, true);
+                PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
             }
         }
 
         if (bow.getValue().getName().equalsIgnoreCase("use item wrap") && mc.thePlayer.getHeldItem() != null && mc.thePlayer.getHeldItem().getItem() instanceof ItemBow && mc.thePlayer.isUsingItem() && !getModule(AutoThrow.class).isEnabled()) {
             mc.getNetHandler().addToSendQueue(new C08PacketPlayerBlockPlacement(mc.thePlayer.getHeldItem()));
             if (ViaMCP.getInstance().getVersion() > 47) {
-                PacketWrapper useItem = PacketWrapper.create(29, null, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
                 useItem.write(Type.VAR_INT, 1);
-                PacketUtil.sendToServer(useItem, Protocol1_8To1_9.class, true, true);
+                PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
             }
         }
     };

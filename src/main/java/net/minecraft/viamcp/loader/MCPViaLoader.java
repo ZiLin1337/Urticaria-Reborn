@@ -6,7 +6,7 @@ import com.viaversion.viaversion.api.platform.ViaPlatformLoader;
 import com.viaversion.viaversion.api.platform.providers.ViaProviders;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import com.viaversion.viaversion.api.protocol.version.VersionProvider;
-import com.viaversion.viaversion.protocols.base.BaseVersionProvider;
+import com.viaversion.viaversion.protocol.version.BaseVersionProvider;
 import net.minecraft.viamcp.ViaMCP;
 
 public class MCPViaLoader implements ViaPlatformLoader {

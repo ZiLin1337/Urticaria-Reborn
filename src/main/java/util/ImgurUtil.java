@@ -9,8 +9,8 @@
 /*     */ import java.net.HttpURLConnection;
 /*     */ import java.net.URL;
 /*     */ import java.net.URLEncoder;
+/*     */ import java.util.Base64;
 /*     */ import java.util.List;
-/*     */ import javax.xml.bind.DatatypeConverter;
 /*     */ 
 /*     */ 
 /*     */ 
@@ -68,7 +68,7 @@
 /*  68 */       FileInputStream fs = new FileInputStream(file);
 /*  69 */       fs.read(b);
 /*  70 */       fs.close();
-/*  71 */       return URLEncoder.encode(DatatypeConverter.printBase64Binary(b), "UTF-8");
+/*  71 */       return URLEncoder.encode(Base64.getEncoder().encodeToString(b), "UTF-8");
 /*  72 */     } catch (IOException e) {
 /*  73 */       e.printStackTrace();
 /*     */ 
@@ -78,7 +78,7 @@
 /*     */   }
 /*     */   private static String toBase64(byte[] file) {
 /*     */     try {
-/*  81 */       return URLEncoder.encode(DatatypeConverter.printBase64Binary(file), "UTF-8");
+/*  81 */       return URLEncoder.encode(Base64.getEncoder().encodeToString(file), "UTF-8");
 /*  82 */     } catch (IOException e) {
 /*  83 */       e.printStackTrace();
 /*     */ 
