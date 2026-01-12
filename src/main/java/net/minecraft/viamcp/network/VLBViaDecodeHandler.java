@@ -23,12 +23,12 @@ import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.connection.UserConnection;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.protocol.packet.State;
-import com.viaversion.viaversion.api.type.Type;
+import com.viaversion.viaversion.api.type.Types;
 import com.viaversion.viaversion.exception.CancelCodecException;
 import com.viaversion.viaversion.exception.CancelDecoderException;
 import com.viaversion.viaversion.exception.InformativeException;
-import com.viaversion.viaversion.protocols.v1_17to1_17_1.ClientboundPackets1_17_1;
-import com.viaversion.viaversion.protocols.v1_16_4to1_17.ServerboundPackets1_17;
+import com.viaversion.viaversion.protocols.v1_17to1_17_1.packet.ClientboundPackets1_17_1;
+import com.viaversion.viaversion.protocols.v1_16_4to1_17.packet.ServerboundPackets1_17;
 import com.viaversion.viaversion.util.PipelineUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;
@@ -64,12 +64,12 @@ public class VLBViaDecodeHandler extends MessageToMessageDecoder<ByteBuf> {
         //1.17 fix by fyxar
         if(ViaMCP.getInstance().getVersion() >= 755) {
             try {
-                if (Type.VAR_INT.read(raw) == ClientboundPackets1_17_1.PING.getId()) {
-                    int id = Type.INT.read(raw);
+                if (Types.VAR_INT.read(raw) == ClientboundPackets1_17_1.PING.getId()) {
+                    int id = Types.INT.read(raw);
 
                     InstanceAccess.mc.addScheduledTask(() -> {
                         PacketWrapper wrapper = PacketWrapper.create(ServerboundPackets1_17.PONG, user);
-                        wrapper.write(Type.INT, id);
+                        wrapper.write(Types.INT, id);
                         try {
                             wrapper.sendToServer(Protocol1_17To1_16_4.class);
                         } catch (Exception e) {
