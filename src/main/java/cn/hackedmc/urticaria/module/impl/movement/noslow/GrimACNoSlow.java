@@ -26,8 +26,6 @@ import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.type.Type;
 import com.viaversion.viaversion.api.type.types.ByteType;
-import com.viaversion.viaversion.protocols.v1_11_1to1_12.ServerboundPackets1_12;
-import com.viaversion.viaversion.protocols.v1_8to1_9.ServerboundPackets1_9;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.item.*;
