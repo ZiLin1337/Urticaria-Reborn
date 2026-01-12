@@ -28,7 +28,7 @@ import cn.hackedmc.urticaria.util.packet.PacketUtil;
 import cn.hackedmc.urticaria.util.render.RenderUtil;
 import cn.hackedmc.urticaria.value.impl.BooleanValue;
 import cn.hackedmc.urticaria.value.impl.NumberValue;
-import com.viaversion.viarewind.protocol.protocol1_8to1_9.Protocol1_8To1_9;
+import com.viaversion.viarewind.protocol.v1_9to1_8.Protocol1_9To1_8;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.type.Type;
@@ -163,9 +163,9 @@ public class AutoGApple extends Module {
                     mc.getNetHandler().addToSendQueueUnregistered(packet);
                     if (packet instanceof C08PacketPlayerBlockPlacement) {
                         if (ViaMCP.getInstance().getVersion() > 47) {
-                            PacketWrapper useItem = PacketWrapper.create(29, null, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                            PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
                             useItem.write(Type.VAR_INT, 1);
-                            PacketUtil.sendToServer(useItem, Protocol1_8To1_9.class, true, true);
+                            PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
                         }
                     }
                 }
