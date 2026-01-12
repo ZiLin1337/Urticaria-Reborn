@@ -1,0 +1,10 @@
+Compiled from "Type.java"
+public abstract class com.viaversion.viaversion.api.type.Type<T> implements com.viaversion.viaversion.api.type.ByteBufReader<T>, com.viaversion.viaversion.api.type.ByteBufWriter<T>, com.viaversion.viaversion.api.type.CodecWriter<T> {
+  protected com.viaversion.viaversion.api.type.Type(java.lang.Class<? super T>);
+  protected com.viaversion.viaversion.api.type.Type(java.lang.String, java.lang.Class<? super T>);
+  public java.lang.Class<? super T> getOutputClass();
+  public java.lang.String getTypeName();
+  public void write(com.viaversion.viaversion.api.minecraft.codec.Ops, T);
+  public java.lang.Class<? extends com.viaversion.viaversion.api.type.Type> getBaseClass();
+  public java.lang.String toString();
+}

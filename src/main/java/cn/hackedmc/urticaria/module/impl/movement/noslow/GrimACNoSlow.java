@@ -24,7 +24,7 @@ import cn.hackedmc.urticaria.value.impl.SubMode;
 import com.viaversion.viarewind.protocol.v1_9to1_8.Protocol1_9To1_8;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
-import com.viaversion.viaversion.api.type.Type;
+import com.viaversion.viaversion.api.type.Types;
 import com.viaversion.viaversion.api.type.types.ByteType;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.gui.inventory.GuiInventory;
@@ -125,9 +125,9 @@ public class GrimACNoSlow extends Mode<NoSlow> {
 
             if (mode.getValue().getName().equalsIgnoreCase("swap hand")) {
                 PacketWrapper digging = PacketWrapper.create(19, Via.getManager().getConnectionManager().getConnections().iterator().next());
-                digging.write(Type.VAR_INT, 6);
-                digging.write(Type.LONG, BlockPos.ORIGIN.toLong());
-                digging.write(Type.BYTE, (byte) 0);
+                digging.write(Types.VAR_INT, 6);
+                digging.write(Types.LONG, BlockPos.ORIGIN.toLong());
+                digging.write(Types.BYTE, (byte) 0);
                 PacketUtil.sendToServer(digging, Protocol1_9To1_8.class, true, true);
             }
 
@@ -167,7 +167,7 @@ public class GrimACNoSlow extends Mode<NoSlow> {
             mc.getNetHandler().addToSendQueueUnregistered(new C08PacketPlayerBlockPlacement(mc.thePlayer.getHeldItem()));
             if (ViaMCP.getInstance().getVersion() > 47) {
                 PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
-                useItem.write(Type.VAR_INT, 1);
+                useItem.write(Types.VAR_INT, 1);
                 PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
             }
         }
@@ -176,7 +176,7 @@ public class GrimACNoSlow extends Mode<NoSlow> {
             mc.getNetHandler().addToSendQueue(new C08PacketPlayerBlockPlacement(mc.thePlayer.getHeldItem()));
             if (ViaMCP.getInstance().getVersion() > 47) {
                 PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
-                useItem.write(Type.VAR_INT, 1);
+                useItem.write(Types.VAR_INT, 1);
                 PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
             }
         }

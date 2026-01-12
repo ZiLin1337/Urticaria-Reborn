@@ -31,7 +31,7 @@ import cn.hackedmc.urticaria.value.impl.NumberValue;
 import com.viaversion.viarewind.protocol.v1_9to1_8.Protocol1_9To1_8;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
-import com.viaversion.viaversion.api.type.Type;
+import com.viaversion.viaversion.api.type.Types;
 import net.minecraft.command.server.CommandMessage;
 import net.minecraft.item.ItemAppleGold;
 import net.minecraft.item.ItemStack;
@@ -164,7 +164,7 @@ public class AutoGApple extends Module {
                     if (packet instanceof C08PacketPlayerBlockPlacement) {
                         if (ViaMCP.getInstance().getVersion() > 47) {
                             PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
-                            useItem.write(Type.VAR_INT, 1);
+                            useItem.write(Types.VAR_INT, 1);
                             PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
                         }
                     }
