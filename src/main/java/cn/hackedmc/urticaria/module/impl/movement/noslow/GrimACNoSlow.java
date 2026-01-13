@@ -26,6 +26,7 @@ import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
 import com.viaversion.viaversion.api.type.Types;
 import com.viaversion.viaversion.api.type.types.ByteType;
+import com.viaversion.viaversion.protocols.v1_8to1_9.packet.ServerboundPackets1_9;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.item.*;
@@ -124,7 +125,7 @@ public class GrimACNoSlow extends Mode<NoSlow> {
             }
 
             if (mode.getValue().getName().equalsIgnoreCase("swap hand")) {
-                PacketWrapper digging = PacketWrapper.create(19, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                PacketWrapper digging = PacketWrapper.create(ServerboundPackets1_9.PLAYER_DIGGING, Via.getManager().getConnectionManager().getConnections().iterator().next());
                 digging.write(Types.VAR_INT, 6);
                 digging.write(Types.LONG, BlockPos.ORIGIN.toLong());
                 digging.write(Types.BYTE, (byte) 0);
@@ -166,7 +167,7 @@ public class GrimACNoSlow extends Mode<NoSlow> {
         if (mc.thePlayer.getHeldItem() != null && mc.thePlayer.getHeldItem().getItem() instanceof ItemSword && mc.thePlayer.isUsingItem()) {
             mc.getNetHandler().addToSendQueueUnregistered(new C08PacketPlayerBlockPlacement(mc.thePlayer.getHeldItem()));
             if (ViaMCP.getInstance().getVersion() > 47) {
-                PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                PacketWrapper useItem = PacketWrapper.create(ServerboundPackets1_9.USE_ITEM, Via.getManager().getConnectionManager().getConnections().iterator().next());
                 useItem.write(Types.VAR_INT, 1);
                 PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
             }
@@ -175,7 +176,7 @@ public class GrimACNoSlow extends Mode<NoSlow> {
         if (bow.getValue().getName().equalsIgnoreCase("use item wrap") && mc.thePlayer.getHeldItem() != null && mc.thePlayer.getHeldItem().getItem() instanceof ItemBow && mc.thePlayer.isUsingItem() && !getModule(AutoThrow.class).isEnabled()) {
             mc.getNetHandler().addToSendQueue(new C08PacketPlayerBlockPlacement(mc.thePlayer.getHeldItem()));
             if (ViaMCP.getInstance().getVersion() > 47) {
-                PacketWrapper useItem = PacketWrapper.create(29, Via.getManager().getConnectionManager().getConnections().iterator().next());
+                PacketWrapper useItem = PacketWrapper.create(ServerboundPackets1_9.USE_ITEM, Via.getManager().getConnectionManager().getConnections().iterator().next());
                 useItem.write(Types.VAR_INT, 1);
                 PacketUtil.sendToServer(useItem, Protocol1_9To1_8.class, true, true);
             }

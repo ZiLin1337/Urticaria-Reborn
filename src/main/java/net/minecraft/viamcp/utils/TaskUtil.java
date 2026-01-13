@@ -4,7 +4,7 @@ import com.viaversion.viaversion.api.platform.PlatformTask;
 import com.viaversion.viaversion.api.scheduler.Task;
 import com.viaversion.viaversion.api.scheduler.TaskStatus;
 
-public class TaskUtil implements PlatformTask<Task> {
+public class TaskUtil implements PlatformTask<Void> {
     private final Task task;
 
     public TaskUtil(final Task task) {
@@ -12,8 +12,8 @@ public class TaskUtil implements PlatformTask<Task> {
     }
 
     @Override
-    public Task getObject() {
-        return this.task;
+    public Void getObject() {
+        return null;
     }
 
     @Override

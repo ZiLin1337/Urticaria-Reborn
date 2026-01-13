@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class MCPViaConfig extends AbstractViaConfig {
     private static final List<String> UNSUPPORTED = Arrays.asList("checkforupdates", "bungee-ping-interval", "bungee-ping-save", "bungee-servers",
@@ -16,8 +17,8 @@ public class MCPViaConfig extends AbstractViaConfig {
             "blockconnection-method", "quick-move-action-fix", "item-cache", "change-1_9-hitbox", "change-1_14-hitbox",
             "use-new-deathmessages", "nms-player-ticking");
 
-    public MCPViaConfig(final File configFile) {
-        super(configFile);
+    public MCPViaConfig(final File configFile, Logger logger) {
+        super(configFile, logger);
         this.reload();
     }
 
