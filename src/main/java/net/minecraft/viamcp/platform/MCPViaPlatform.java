@@ -18,6 +18,7 @@ import org.apache.logging.log4j.LogManager;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +33,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID> {
 
     public MCPViaPlatform(final File dataFolder) {
         final Path configDir = dataFolder.toPath().resolve("ViaVersion");
-        config = new MCPViaConfig(configDir.resolve("viaversion.yml").toFile());
+        config = new MCPViaConfig(configDir.resolve("viaversion.yml").toFile(), logger);
         config.reload();
         this.dataFolder = configDir.toFile();
         api = new MCPViaAPI();
@@ -99,31 +100,31 @@ public class MCPViaPlatform implements ViaPlatform<UUID> {
     }
 
     @Override
-    public ViaCommandSender[] getOnlinePlayers() {
-        return new ViaCommandSender[1337]; // What the fuck
+    public Collection<ViaCommandSender> getOnlinePlayers() {
+        return Arrays.asList(); // What the fuck
     }
 
-    private ViaCommandSender[] getServerPlayers() {
-        return new ViaCommandSender[1337]; // What the fuck 2: Electric Boogaloo
+    private Collection<ViaCommandSender> getServerPlayers() {
+        return Arrays.asList(); // What the fuck 2: Electric Boogaloo
     }
 
     @Override
-    public void sendMessage(final UUID uuid, final String s) {
+    public void sendMessage(ViaCommandSender viaCommandSender, String s) {
         // Don't even know why this needs to be overridden
     }
 
     @Override
-    public boolean kickPlayer(final UUID uuid, final String s) {
+    public boolean kickPlayer(ViaCommandSender viaCommandSender, String s) {
         return false;
     }
 
     @Override
-    public boolean disconnect(UserConnection connection, String message) {
-        return ViaPlatform.super.disconnect(connection, message);
+    public void disconnect(UserConnection connection, String message) {
+        ViaPlatform.super.disconnect(connection, message);
     }
 
     @Override
-    public boolean isPluginEnabled() {
+    public boolean isPluginEnabled(String pluginName) {
         return true;
     }
 
@@ -167,7 +168,7 @@ public class MCPViaPlatform implements ViaPlatform<UUID> {
     }
 
     @Override
-    public boolean hasPlugin(final String s) {
+    public boolean hasPlugin(String pluginName) {
         return false;
     }
 }
